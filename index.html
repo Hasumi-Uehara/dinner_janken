@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="./css/reset.css">
+  <link rel="stylesheet" type="text/css" href="./css/sanitize.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <title>じゃんけん</title>
+</head>
+
+<body>
+  <header>
+    <h1>今日のごはん♪</h1>
+  </header>
+
+  <main>
+    <div class="i__want">私　→　冨士丸
+      <ul>
+        <li id="gu_btn"><button></button><img src="img/n0432.png" alt=""></button></li>
+        <li id="cho_btn"><button><img src="img/n0431.png" alt=""></button></li>
+        <li id="par_btn"><button><img src="img/n0433.png" alt=""></button></li>
+      </ul>
+    </div>
+
+    <div class="k__want">児玉さん　→　くまちゃんラーメン</div>
+    <p id="k_hand">？？？</p>
+
+    <div class="s__want">さちおかさん　→　台湾まぜそば はなび</div>
+    <p id="s_hand">？？？</p>
+
+    <div>結果は・・・</div>
+    <p id="result"></p>
+  </main>
+
+  <footer></footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+
+    // 私がグーを押した時
+    $('#gu_btn').on('click', function(){
+      const randomNumK = Math.floor(Math.random()*3)+1;
+      const randomNumS = Math.floor(Math.random()*3)+1;
+      console.log(randomNumK,randomNumS);
+
+      // 1 = グー
+      // 2 = チョキ
+      // 3 = パー
+
+      if(randomNumK == 1 && randomNumS == 1){
+        $('#k_hand').text('グー');
+        $('#s_hand').text('グー');
+        $('#result').text('あいこ');
+      }else if(randomNumK == 1 && randomNumS == 2){
+        $('#k_hand').text('グー');
+        $('#s_hand').text('チョキ');
+        $('#result').text('はなびボツ');
+      }else if(randomNumK == 1 && randomNumS == 3){
+        $('#k_hand').text('グー');
+        $('#s_hand').text('パー');
+        $('#result').text('台湾まぜそば！');
+      }else if(randomNumK == 2 && randomNumS == 1){
+        $('#k_hand').text('チョキ');
+        $('#s_hand').text('グー');
+        $('#result').text('くまちゃんボツ');
+      }else if(randomNumK == 2 && randomNumS == 2){
+        $('#k_hand').text('チョキ');
+        $('#s_hand').text('チョキ');
+        $('#result').text('おしゅし！！！！！');
+      }else if(randomNumK == 2 && randomNumS == 3){
+        $('#k_hand').text('チョキ');
+        $('#s_hand').text('パー');
+        $('#result').text('あいこ');
+      }else if(randomNumK == 3 && randomNumS == 1){
+        $('#k_hand').text('パー');
+        $('#s_hand').text('グー');
+        $('#result').text('くまちゃん！');
+      }else if(randomNumK == 3 && randomNumS == 2){
+        $('#k_hand').text('パー');
+        $('#s_hand').text('チョキ');
+        $('#result').text('あいこ');
+      }else{
+        $('#k_hand').text('パー');
+        $('#s_hand').text('パー');
+        $('#result').text('寿司はボツ');
+      }
+    })
+
+    // 私がチョキを押した時
+    $('#cho_btn').on('click', function(){
+      const randomNumK = Math.floor(Math.random()*3)+1;
+      const randomNumS = Math.floor(Math.random()*3)+1;
+      console.log(randomNumK,randomNumS);
+
+      if(randomNumK == 1 && randomNumS == 1){
+        $('#k_hand').text('グー');
+        $('#s_hand').text('グー');
+        $('#result').text('寿司はボツ');
+      }else if(randomNumK == 1 && randomNumS == 2){
+        $('#k_hand').text('グー');
+        $('#s_hand').text('チョキ');
+        $('#result').text('くまちゃん！');
+      }else if(randomNumK == 1 && randomNumS == 3){
+        $('#k_hand').text('グー');
+        $('#s_hand').text('パー');
+        $('#result').text('あいこ');
+      }else if(randomNumK == 2 && randomNumS == 1){
+        $('#k_hand').text('チョキ');
+        $('#s_hand').text('グー');
+        $('#result').text('台湾まぜそば！');
+      }else if(randomNumK == 2 && randomNumS == 2){
+        $('#k_hand').text('チョキ');
+        $('#s_hand').text('チョキ');
+        $('#result').text('あいこ');
+      }else if(randomNumK == 2 && randomNumS == 3){
+        $('#k_hand').text('チョキ');
+        $('#s_hand').text('パー');
+        $('#result').text('はなびはボツ');
+      }else if(randomNumK == 3 && randomNumS == 1){
+        $('#k_hand').text('パー');
+        $('#s_hand').text('グー');
+        $('#result').text('あいこ');
+      }else if(randomNumK == 3 && randomNumS == 2){
+        $('#k_hand').text('パー');
+        $('#s_hand').text('チョキ');
+        $('#result').text('くまちゃんボツ');
+      }else{
+        $('#k_hand').text('パー');
+        $('#s_hand').text('パー');
+        $('#result').text('おしゅし！！！！！');
+      }
+    })
+
+    // 私がパーを押した時
+    $('#par_btn').on('click', function(){
+      const randomNumK = Math.floor(Math.random()*3)+1;
+      const randomNumS = Math.floor(Math.random()*3)+1;
+      console.log(randomNumK,randomNumS);
+
+      if(randomNumK == 1 && randomNumS == 1){
+        $('#k_hand').text('グー');
+        $('#s_hand').text('グー');
+        $('#result').text('おしゅし！！！！！');
+      }else if(randomNumK == 1 && randomNumS == 2){
+        $('#k_hand').text('グー');
+        $('#s_hand').text('チョキ');
+        $('#result').text('あいこ');
+      }else if(randomNumK == 1 && randomNumS == 3){
+        $('#k_hand').text('グー');
+        $('#s_hand').text('パー');
+        $('#result').text('くまちゃんボツ');
+      }else if(randomNumK == 2 && randomNumS == 1){
+        $('#k_hand').text('チョキ');
+        $('#s_hand').text('グー');
+        $('#result').text('あいこ');
+      }else if(randomNumK == 2 && randomNumS == 2){
+        $('#k_hand').text('チョキ');
+        $('#s_hand').text('チョキ');
+        $('#result').text('寿司はボツ');
+      }else if(randomNumK == 2 && randomNumS == 3){
+        $('#k_hand').text('チョキ');
+        $('#s_hand').text('パー');
+        $('#result').text('くまちゃん！');
+      }else if(randomNumK == 3 && randomNumS == 1){
+        $('#k_hand').text('パー');
+        $('#s_hand').text('グー');
+        $('#result').text('はなびボツ');
+      }else if(randomNumK == 3 && randomNumS == 2){
+        $('#k_hand').text('パー');
+        $('#s_hand').text('チョキ');
+        $('#result').text('台湾まぜそば！');
+      }else{
+        $('#k_hand').text('パー');
+        $('#s_hand').text('パー');
+        $('#result').text('あいこ');
+      }
+    })
+  </script>
+
+</body>
+
+</html>
